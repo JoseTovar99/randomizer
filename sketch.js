@@ -15,20 +15,38 @@ let cars = [{
   manufacturer: "Lamborghini"}];
 
 let randomIndex;
+let animating = false;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(700, 700);
   background(220);
-
+  textSize(32);
+  text("Click To Randomize!", 50, 50);
 }
 
 function draw() {
 
+if (animating == true){
+  ellipse(random(width), random(height), random(50, 200));
+
+}
+
+}
+
+function randomizer(){
+  animating = false;
+  if (cars[0]){
+  background(random(200, 255));
+  randomIndex = int(random(cars.length));
+  text(`${cars[randomIndex].name} 's manufacturer is ${cars[randomIndex].manufacturer}`, 50, 50);
+  cars.splice(randomIndex, 1);
+} else{
+  background(random(200, 255));
+  text("nothing left!", 50, 50);
+}
 }
 
 function mousePressed(){
-  background(random(200, 255));
-  randomIndex = int(random(cars.length));
-  text(cars[randomIndex].name, 50, 50);
-  cars.splice(randomIndex, 1);
+  animating = true;
+  setTimeout(randomizer, 1000);
 }
