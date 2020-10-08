@@ -22,7 +22,7 @@ let button;
 
 function preload(){
 
-for (let i = 0; i <= 4; i++ ){
+for (let i = 0; i <= 6; i++ ){
   dog[i] = loadImage(`assets/dog_${i}.jpg`)
 }
 
@@ -33,11 +33,13 @@ function setup() {
   background(173, 216, 230);
   textSize(36);
   imageMode(CENTER);
-  frameRate(5);
-  text("Click To Randomize!", 50, 50);
+  frameRate(10);
+  text("Dog Randomizer!", 50, 50);
 
   button = createButton("Click to Randomize!");
   button.mousePressed(buttonPressed);
+  button.class("randomButton");
+
 }
 
 function draw() {

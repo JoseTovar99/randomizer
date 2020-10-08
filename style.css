@@ -5,3 +5,22 @@ html, body {
 canvas {
   display: block;
 }
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+
+
+.randomButton{
+
+  padding: 20px;
+  background-color: #62e3df;
+  position:absolute;
+  transition: .5s ease;
+  top: 50%;
+  left: 50%;
+
+}
