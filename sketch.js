@@ -1,29 +1,29 @@
-let cars = [{
-  name: "Mustang",
-  manufacturer: "Ford"},
+let dogs = [{
+  name: "Lovable",
+  },
 {
-  name: "Corvette",
-  manufacturer: "Chevrolet"},
+  name: "Playful",
+  },
 {
-  name: "M4",
-  manufacturer: "BMW"},
+  name: "Funny",
+  },
 {
-  name: "R8",
-  manufacturer: "Audi"},
+  name: "Cute",
+  },
 {
-  name: "Aventador",
-  manufacturer: "Lamborghini"}];
+  name: "Adorable",
+  }];
 
 let randomIndex;
 let animating = false;
-let car = [];
+let dog = [];
 let imageCounter = 0;
 let button;
 
 function preload(){
 
 for (let i = 0; i <= 4; i++ ){
-  car[i] = loadImage(`assets/car_${i}.jpg`)
+  dog[i] = loadImage(`assets/dog_${i}.jpg`)
 }
 
 }
@@ -44,9 +44,9 @@ function draw() {
 
 if (animating == true){
   clear();
-  image(car[imageCounter], width/2, height/2);
+  image(dog[imageCounter], width/2, height/2);
 
-  if (imageCounter < car.length - 1){
+  if (imageCounter < dog.length - 1){
     imageCounter++;
     console.log(imageCounter);
   } else {
@@ -59,15 +59,15 @@ if (animating == true){
 
 function randomizer(){
   animating = false;
-  if (cars[0]){
+  if (dogs[0]){
   //background(random(200, 255));
-  randomIndex = int(random(cars.length));
-  image(random(car), width/2, height/2);
-  text(`${cars[randomIndex].name}`, width/2, height - 530);
-  cars.splice(randomIndex, 1);
+  randomIndex = int(random(dogs.length));
+  image(random(dog), width/2, height/2);
+  text(`${dogs[randomIndex].name}`, width/2, height - 550);
+  dogs.splice(randomIndex, 1);
 } else{
   background(random(200, 255));
-  text("nothing left!", 50, 50);
+  text("Hope you enjoyed!", 50, 50);
 }
 }
 
